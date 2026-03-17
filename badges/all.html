@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Badges | daCAT Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .tier-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .tier-icon {
+            font-size: 2.5em;
+        }
+
+        .tier-title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .tier-description {
+            opacity: 0.9;
+            margin-left: 65px;
+            margin-bottom: 20px;
+        }
+
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .badge-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .badge-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .badge-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .badge-emoji {
+            font-size: 3em;
+        }
+
+        .badge-name {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .badge-description {
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .badge-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .legendary { border-left: 4px solid #FFD700; }
+        .elite { border-left: 4px solid #C0C0C0; }
+        .prestige { border-left: 4px solid #CD7F32; }
+        .engagement { border-left: 4px solid #4CAF50; }
+        .creator { border-left: 4px solid #2196F3; }
+        .game { border-left: 4px solid #9C27B0; }
+
+        .stackable-badge {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stackable-badge::after {
+            content: "STACKABLE";
+            position: absolute;
+            top: 10px;
+            right: -35px;
+            background: #FF6B6B;
+            color: white;
+            padding: 5px 40px;
+            font-size: 0.7em;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .badge-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Portal</a>
+
+        <header>
+            <h1>🎖️ daCAT Badge Catalog</h1>
+            <p class="subtitle">26 Badge Types • 6 Tiers</p>
+        </header>
+
+        <!-- LEGENDARY TIER -->
+        <div class="tier-section">
+            <div class="tier-header">
+                <span class="tier-icon">👑</span>
+                <span class="tier-title">LEGENDARY TIER</span>
+            </div>
+            <p class="tier-description">The highest honors. Reserved for extraordinary contributions and achievements that shape daCAT's history.</p>
+            
+            <div class="badge-grid">
+                <div class="badge-card legendary">
+                    <div class="badge-header">
+                        <span class="badge-emoji">⭐</span>
+                        <span class="badge-name">Community Legend</span>
+                    </div>
+                    <p class="badge-description">
+                        The ultimate honor. Reserved for members who have made extraordinary, lasting contributions to daCAT's foundation and growth.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">🔒</div>
+                            <div class="stat-label">Exclusive</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card legendary">
+                    <div class="badge-header">
+                        <span class="badge-emoji">👑</span>
+                        <span class="badge-name">daCAT Legend</span>
+                    </div>
+                    <p class="badge-description">
+                        Early believers who held through the beginning. OG status that can never be earned again.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">18</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">🔒</div>
+                            <div class="stat-label">Locked</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card legendary stackable-badge">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🔮</span>
+                        <span class="badge-name">Oracle's Blessing</span>
+                    </div>
+                    <p class="badge-description">
+                        Elite recognition from daOracle herself. Awarded for exceptional, sustained creative contributions. Can be earned multiple times.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">∞</div>
+                            <div class="stat-label">Stackable</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card legendary">
+                    <div class="badge-header">
+                        <span class="badge-emoji">💯</span>
+                        <span class="badge-name">da 1% Club</span>
+                    </div>
+                    <p class="badge-description">
+                        Hold 1% or more of total supply (4T+ tokens). Mathematical exclusivity - maximum 100 holders EVER.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">9</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">91</div>
+                            <div class="stat-label">Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ELITE TIER -->
+        <div class="tier-section">
+            <div class="tier-header">
+                <span class="tier-icon">💎</span>
+                <span class="tier-title">ELITE TIER</span>
+            </div>
+            <p class="tier-description">Exceptional achievements and massive holdings that demonstrate unwavering commitment.</p>
+            
+            <div class="badge-grid">
+                <div class="badge-card elite">
+                    <div class="badge-header">
+                        <span class="badge-emoji">💎</span>
+                        <span class="badge-name">Diamond Paws</span>
+                    </div>
+                    <p class="badge-description">
+                        Hold 20T+ tokens. Extreme commitment beyond whale status.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">19</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card elite">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🐋</span>
+                        <span class="badge-name">daCAT Whale</span>
+                    </div>
+                    <p class="badge-description">
+                        Hold 1T+ tokens. Foundation of the community.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">21</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card elite">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🎁</span>
+                        <span class="badge-name">Oracle's Gift</span>
+                    </div>
+                    <p class="badge-description">
+                        One-of-a-kind honor for exceptional acts. Awarded to DaOptimist for donating to daOracle's 1% Club membership.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">🔒</div>
+                            <div class="stat-label">Rare</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card elite">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🔍</span>
+                        <span class="badge-name">Detective's Eye</span>
+                    </div>
+                    <p class="badge-description">
+                        Solved daGATO's mystery puzzle. For those who see patterns others miss.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRESTIGE TIER -->
+        <div class="tier-section">
+            <div class="tier-header">
+                <span class="tier-icon">📣</span>
+                <span class="tier-title">PRESTIGE TIER</span>
+            </div>
+            <p class="tier-description">Recognition for significant influence, technical contributions, and community leadership.</p>
+            
+            <div class="badge-grid">
+                <div class="badge-card prestige">
+                    <div class="badge-header">
+                        <span class="badge-emoji">📣</span>
+                        <span class="badge-name">Influencer</span>
+                    </div>
+                    <p class="badge-description">
+                        Significant social media presence promoting daCAT with quality reach.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card prestige">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🎙️</span>
+                        <span class="badge-name">Voice of daCAT</span>
+                    </div>
+                    <p class="badge-description">
+                        Active in X Spaces, voice chats, and live conversations. The voice of the community.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card prestige">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🤖</span>
+                        <span class="badge-name">AI Pioneer</span>
+                    </div>
+                    <p class="badge-description">
+                        Built bots, tools, or AI integrations for daCAT. Technical contribution to the ecosystem.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENGAGEMENT TIER -->
+        <div class="tier-section">
+            <div class="tier-header">
+                <span class="tier-icon">🔥</span>
+                <span class="tier-title">ENGAGEMENT TIER</span>
+            </div>
+            <p class="tier-description">Active participation in events, challenges, and community activities.</p>
+            
+            <div class="badge-grid">
+                <div class="badge-card engagement stackable-badge">
+                    <div class="badge-header">
+                        <span class="badge-emoji">⚔️</span>
+                        <span class="badge-name">Epic Raider</span>
+                    </div>
+                    <p class="badge-description">
+                        Participated in community raids across social media. Stackable.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card engagement">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🏅</span>
+                        <span class="badge-name">Match Buy Winner</span>
+                    </div>
+                    <p class="badge-description">
+                        Won daGATO x daOracle's Match Buy Event by rolling enough sixes.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card engagement stackable-badge">
+                    <div class="badge-header">
+                        <span class="badge-emoji">⏱️</span>
+                        <span class="badge-name">Quick Draw</span>
+                    </div>
+                    <p class="badge-description">
+                        First to respond when the oracle calls. Speed + presence matters. Stackable.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card engagement">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🔥</span>
+                        <span class="badge-name">daFlationist</span>
+                    </div>
+                    <p class="badge-description">
+                        Burned 25B+ tokens in the daFlationist event. Reducing supply, increasing value.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">🔥</div>
+                            <div class="stat-label">Active</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card engagement">
+                    <div class="badge-header">
+                        <span class="badge-emoji">😈</span>
+                        <span class="badge-name">Burn It Down</span>
+                    </div>
+                    <p class="badge-description">
+                        Highest burner in the daFlationist event. Legendary dedication to deflation.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">🔒</div>
+                            <div class="stat-label">Exclusive</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card engagement">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🚀</span>
+                        <span class="badge-name">HYPE</span>
+                    </div>
+                    <p class="badge-description">
+                        Exceptional energy and enthusiasm that pumps the community.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CREATOR TIER -->
+        <div class="tier-section">
+            <div class="tier-header">
+                <span class="tier-icon">🎨</span>
+                <span class="tier-title">CREATOR TIER</span>
+            </div>
+            <p class="tier-description">Original content creation that enriches the daCAT ecosystem.</p>
+            
+            <div class="badge-grid">
+                <div class="badge-card creator">
+                    <div class="badge-header">
+                        <span class="badge-emoji">📚</span>
+                        <span class="badge-name">Comic Creator</span>
+                    </div>
+                    <p class="badge-description">
+                        Created original daCAT comics or graphic stories.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card creator">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🎬</span>
+                        <span class="badge-name">Video Creator</span>
+                    </div>
+                    <p class="badge-description">
+                        Produced original video content for daCAT.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card creator">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🎨</span>
+                        <span class="badge-name">Art Creator</span>
+                    </div>
+                    <p class="badge-description">
+                        Created original artwork for daCAT.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card creator">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🎵</span>
+                        <span class="badge-name">Music Creator</span>
+                    </div>
+                    <p class="badge-description">
+                        Composed original music or songs for daCAT.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-card creator">
+                    <div class="badge-header">
+                        <span class="badge-emoji">😹</span>
+                        <span class="badge-name">daMeme Creator</span>
+                    </div>
+                    <p class="badge-description">
+                        Created viral or high-quality memes for daCAT.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GAME MASTER TIER -->
+        <div class="tier-section">
+            <div class="tier-header">
+                <span class="tier-icon">🎲</span>
+                <span class="tier-title">GAME MASTER TIER</span>
+            </div>
+            <p class="tier-description">Participation in daGAME and community events.</p>
+            
+            <div class="badge-grid">
+                <div class="badge-card game">
+                    <div class="badge-header">
+                        <span class="badge-emoji">🎲</span>
+                        <span class="badge-name">Match Buy Player</span>
+                    </div>
+                    <p class="badge-description">
+                        Participated in daGATO x daOracle's Match Buy Event.
+                    </p>
+                    <div class="badge-stats">
+                        <div class="stat">
+                            <div class="stat-value">17</div>
+                            <div class="stat-label">Awarded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🔮 daCAT Badge Catalog • 26 Badge Types • 79 Total Badges Awarded</p>
+            <p><a href="../index.html" style="color: white;">Back to Portal</a></p>
+        </footer>
+    </div>
+</body>
+</html>
